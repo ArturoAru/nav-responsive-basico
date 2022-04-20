@@ -1,0 +1,116 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+}
+
+body{
+    font-family: sans-serif;
+    padding: 90px 20px;
+}
+
+.header{
+    background-color: darkcyan;
+    height: 80px;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+}
+
+.nav{
+    display: flex;
+    justify-content: space-between;
+
+    /*para pantallas XL a mas*/
+    max-width: 992px;
+    margin: 0 auto;
+}
+
+.nav-menu-item-link , a.logo{
+    color: white;
+    text-decoration: none;
+}
+
+a.logo{
+    font-size: 30px;
+    padding: 0 40px;
+    font-weight: bold; /*fuente mas gruesa*/
+    line-height: 80px;
+}
+
+.nav-menu{
+    display: flex;
+    margin-right: 40px;
+    list-style: none;
+}
+
+.nav-menu-item{
+    font-size: 18px;
+    margin: 0 10px;
+    line-height: 80px;  /*coloca el contenido en medio de los 80px*/
+    text-transform: uppercase;
+    width: max-content; /*hace q el contenido no se vaya hacia abajo , lo mantiene sin romper el "sobre-mi"*/
+}
+
+.nav-menu-item-link{
+    padding: 8px 12px;
+    border-radius: 5px;
+}
+
+.nav-menu-item-link:hover,
+.contacto{
+    background-color: darkslategrey;
+    transition: .5s;
+
+}
+
+.contacto:hover{
+    color: cadetblue;
+    transition: .3s;
+}
+
+/*toggle*/
+
+.nav-toggle{
+    background: none;
+    border: none;
+    color: white;
+    font-size: 30px;
+    padding: 0 20px;
+
+    cursor: pointer;
+    display: none;
+}
+
+/*MOVILE*/
+
+@media ( max-width: 768px ){
+
+    .nav-toggle{
+        display: block;
+    }
+
+    .nav-menu{
+        flex-direction: column;
+        position: fixed;
+        background-color: darkslategrey;
+        top: 80px;
+        width: 100%;
+        align-items: center;
+        padding: 20px 0;
+        height: calc(100% - 60px);
+        left: 100%;
+        transition: left .3s;
+        
+    }
+
+    .nav-menu-visible{
+        left: 0;
+    }
+
+    .nav-menu-item{
+        
+    }
+
+}
+
